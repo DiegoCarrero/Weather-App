@@ -1,4 +1,4 @@
-import { Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/common/NavBar';
 import About from './components/pages/About';
