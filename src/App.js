@@ -1,17 +1,26 @@
-import { useEffect } from 'react';
-import { getWeather } from './api/fetch';
+import { Routes } from 'react-router-dom';
 import './App.css';
+import NavBar from './components/common/NavBar';
+import About from './components/pages/About';
+import Home from './components/pages/Home';
 
 function App() {
 
-  useEffect(() => {
-    getWeather().then(response => console.log(response))
-  } ,[])
-
   return (
+
     <div className="App">
-      
+
+      <NavBar />
+
+      <Routes>
+
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />}/>
+
+      </Routes>
+
     </div>
+
   );
 }
 
