@@ -4,9 +4,9 @@ import './App.css';
 
 function App() {
 
-  useEffect(
+  useEffect(() => {
     getWeather().then(response => console.log(response))
-  ,[])
+  } ,[])
 
   return (
     <div className="App">
