@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { getWeather } from './api/fetch';
 import './App.css';
 
-import Header from './components/Header';
-import Previous from './components/Previous';
-import Summaries from './components/Summaries';
-import Weather from './components/Weather';
+import Header from './components/weather/Header';
+import Previous from './components/weather/Previous';
+import Summaries from './components/weather/Summaries';
+import Weather from './components/weather/Weather';
 
 function App() {
 
