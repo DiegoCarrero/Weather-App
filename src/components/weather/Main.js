@@ -1,11 +1,13 @@
 
 
-export default function Main( { test } ) {
+export default function Main( { search, test } ) {
     return (
-        <div>
+        <main>
             {
-                test()
+                Object.keys(search).length === 0 ? 
+                <p>Choose a location to view the weather</p> 
+                : null
             }
-        </div>
+        </main>
     )
 }

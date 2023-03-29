@@ -28,7 +28,7 @@ export default function Home() {
         event.preventDefault();
         getWeather(input)
         .then(response => {
-            console.log(response)
+            // console.log(response)
             setSearch(response)
         })
         input === '' ? city = 'your current location' : city = input;
