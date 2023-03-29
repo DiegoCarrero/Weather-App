@@ -15,7 +15,7 @@ export default function Previous({ prevSearches /*, prevCities*/ }) {
                         {
                             prevSearches.map(prevSearch => (
                                 <li key={prevSearch.nearest_area[0].areaName[0].value}>
-                                    {prevSearch.nearest_area[0].areaName[0].value} - {prevSearch.current_condition[0].FeelsLikeF}
+                                    {prevSearch.nearest_area[0].areaName[0].value} - {prevSearch.current_condition[0].FeelsLikeF}°F
                                 </li>
                             ))
                         }
