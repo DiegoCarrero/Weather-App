@@ -37,13 +37,6 @@ export default function Home() {
         setPrevSearches([...prevSearches, search]);
     }
 
-    function test() {
-        if (Object.keys(search).length !== 0) {
-            console.log(search)
-            return (<p>It feels like {search.current_condition[0].FeelsLikeC} degrees Celsius in {city}</p>)
-        }
-    }
-
     return (
         <div>
             <Header input={input} setInput={setInput} handleSubmit={handleSubmit} />
@@ -52,10 +45,15 @@ export default function Home() {
                 ? 
                 <main><p>Choose a location to view the weather</p></main> 
                 :
-                <Main search={search} city={city} test={test}/>
+                <Main search={search} city={city} />
             }
-            
-            <Summaries search={search} />
+            {
+                Object.keys(search).length !== 0
+                ?
+                <Summaries search={search} />
+                : null
+            }
+
             <Previous prevSearches={prevSearches} />
         </div>
     )
