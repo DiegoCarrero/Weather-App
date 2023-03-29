@@ -1,5 +1,5 @@
 import Header from "../weather/Header"
-import getWeather from '../../api/fetch'
+import { getWeather } from '../../api/fetch'
 import { useState } from "react"
 
 export default function Home() {
@@ -8,15 +8,16 @@ export default function Home() {
     const [search, setSearch] = useState({});
     const [prevSearches, setPrevSearches] = useState([]);
 
-    // function updateInput(event) {
-    //     setInput(event.target.value);
-    // }
-
     function handleSubmit(event) {
         event.preventDefault();
-        getWeather(input).then(response => setSearch(response));
+        getWeather(input)
+        .then(response => {
+            console.log(response)
+            setSearch(response)
+        })
+        
         console.log(input)
-        console.log(search)
+        
         setInput('');
         setPrevSearches([...prevSearches, search]);
     }
@@ -26,13 +27,11 @@ export default function Home() {
             <Header  
                 input={input}
                 setInput={setInput}
-                // updateInput={updateInput}
                 handleSubmit={handleSubmit}
             />
+            {
+                Object.keys(search).length !== 0 ? <p>It feels like {search.current_condition[0].FeelsLikeC} degrees Celsius in Detroit!!!</p> : null
+            }
         </div>
     )
 }
-
- // useEffect(() => {
-    //     getWeather().then(response => console.log(response))
-    // } ,[])

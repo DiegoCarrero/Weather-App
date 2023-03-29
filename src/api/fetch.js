@@ -1,6 +1,6 @@
 const API_URL = 'https://wttr.in/'
 
-export default function getWeather(city) {
+export function getWeather(city) {
     return (
         fetch(API_URL + city + '?format=j1')
         .then((response) => response.json())
