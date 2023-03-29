@@ -43,20 +43,19 @@ export default function Home() {
         <div>
             <Header input={input} setInput={setInput} handleSubmit={handleSubmit} />
             {
-                Object.keys(search).length === 0 
+                Object.keys(search).length !== 0 
                 ? 
-                <main><p>Choose a location to view the weather</p></main> 
+                <>
+                    <Main search={search} city={city} />
+                    <Summaries search={search} />
+                    <Previous prevSearches={prevSearches} prevCities={prevCities} />
+                </>
                 :
-                <Main search={search} city={city} />
-            }
-            {
-                Object.keys(search).length !== 0
-                ?
-                <Summaries search={search} />
-                : null
+                <main><p>Choose a location to view the weather</p></main>
+                
             }
 
-            <Previous prevSearches={prevSearches} city={city} />
+            
         </div>
     )
 }
