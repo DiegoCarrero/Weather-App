@@ -28,7 +28,7 @@ export default function Home() {
         event.preventDefault();
         getWeather(input)
         .then(response => {
-            console.log(response)
+            // console.log(response)
             setSearch(response)
         })
         input === '' ? city = 'your current location' : city = input;
@@ -39,14 +39,22 @@ export default function Home() {
 
     function test() {
         if (Object.keys(search).length !== 0) {
-            return (<p>It feels like {search.current_condition[0].FeelsLikeC} degrees Celsius in {city}!!!</p>)
+            console.log(search)
+            return (<p>It feels like {search.current_condition[0].FeelsLikeC} degrees Celsius in {city}</p>)
         }
     }
 
     return (
         <div>
             <Header input={input} setInput={setInput} handleSubmit={handleSubmit} />
-            <Main search={search} test={test}/>
+            {
+                Object.keys(search).length === 0 
+                ? 
+                <main><p>Choose a location to view the weather</p></main> 
+                :
+                <Main search={search} city={city} test={test}/>
+            }
+            
             <Summaries search={search} />
             <Previous prevSearches={prevSearches} />
         </div>
