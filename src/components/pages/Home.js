@@ -13,6 +13,7 @@ export default function Home() {
     const [input, setInput] = useState('');
     const [search, setSearch] = useState({});
     const [prevSearches, setPrevSearches] = useState([]);
+    // const [prevCities, setPrevCities] = useState([]);
     const navigate = useNavigate();
 
     let { city } = useParams(); 
@@ -28,33 +29,32 @@ export default function Home() {
         event.preventDefault();
         getWeather(input)
         .then(response => {
-            // console.log(response)
             setSearch(response)
+            setPrevSearches([...prevSearches, response]);
         })
-        input === '' ? city = 'your current location' : city = input;
-        navigate(`/${city}`)
+        input === '' ? city = 'Your current location' : city = input;
+        city = city[0].toUpperCase() + city.slice(1).toLowerCase();
+        // setPrevCities([...prevCities, city]);
+        navigate(`/${city}`);
         setInput('');
-        setPrevSearches([...prevSearches, search]);
     }
 
     return (
         <div>
+
             <Header input={input} setInput={setInput} handleSubmit={handleSubmit} />
             {
-                Object.keys(search).length === 0 
+                Object.keys(search).length !== 0 
                 ? 
-                <main><p>Choose a location to view the weather</p></main> 
+                <main>
+                    <Main search={search} city={city} />
+                    <Summaries search={search} />
+                    <Previous prevSearches={prevSearches} /*prevCities={prevCities}*/ />
+                </main>
                 :
-                <Main search={search} city={city} />
-            }
-            {
-                Object.keys(search).length !== 0
-                ?
-                <Summaries search={search} />
-                : null
+                <main><p>Choose a location to view the weather</p></main>
             }
 
-            <Previous prevSearches={prevSearches} />
         </div>
     )
 }

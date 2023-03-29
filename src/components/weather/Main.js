@@ -1,8 +1,7 @@
 
 
-export default function Main( { search, city, test } ) {
+export default function Main( { search, city } ) {
 
-    city = city[0].toUpperCase() + city.slice(1).toLowerCase();
     let area = search.nearest_area[0].areaName[0].value;
     let region = search.nearest_area[0].region[0].value;
     let country = search.nearest_area[0].country[0].value;
