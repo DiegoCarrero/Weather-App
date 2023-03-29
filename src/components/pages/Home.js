@@ -1,7 +1,12 @@
-import Header from "../weather/Header"
 import { getWeather } from '../../api/fetch'
-import { useEffect, useState } from "react"
+import { useState } from "react"
+// import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+import Header from "../weather/Header"
+import Main from '../weather/Main';
+import Summaries from '../weather/Summaries';
+import Previous from '../weather/Previous';
 
 export default function Home() {
 
@@ -12,11 +17,12 @@ export default function Home() {
 
     let { city } = useParams(); 
 
-    useEffect(() => {
-        if (Object.keys(search).length === 0) {
-            navigate('/');
-        }
-    }, [])
+    // Updates URL back to home when page is refreshed
+    // useEffect(() => {
+    //     if (Object.keys(search).length === 0) {
+    //         navigate('/');
+    //     }
+    // }, [])
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -25,7 +31,7 @@ export default function Home() {
             console.log(response)
             setSearch(response)
         })
-        input === '' ? city = 'your-current-location' : city = input;
+        input === '' ? city = 'your current location' : city = input;
         navigate(`/${city}`)
         setInput('');
         setPrevSearches([...prevSearches, search]);
@@ -39,14 +45,10 @@ export default function Home() {
 
     return (
         <div>
-            <Header  
-                input={input}
-                setInput={setInput}
-                handleSubmit={handleSubmit}
-            />
-            {
-                test()
-            }
+            <Header input={input} setInput={setInput} handleSubmit={handleSubmit} />
+            <Main search={search} test={test}/>
+            <Summaries search={search} />
+            <Previous prevSearches={prevSearches} />
         </div>
     )
 }
