@@ -15,6 +15,7 @@ export default function Header({ input, setInput, handleSubmit }) {
                 />
                 <button type="submit">Search</button>
             </form>
+            
         </section>
     )
 }
