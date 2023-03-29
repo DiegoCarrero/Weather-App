@@ -3,7 +3,7 @@
 export default function Header({ input, setInput, handleSubmit }) {
 
     return (
-        <section>
+        <section className="header">
             <h1>Weather App</h1>
 
             <form onSubmit={handleSubmit}>
