@@ -2,7 +2,6 @@
 
 export default function Summaries({ search }) {
 
-    console.log(search)
     let avgTemp = [search.weather[0].avgtempF, search.weather[1].avgtempF, search.weather[2].avgtempF]
     let maxTemp = [search.weather[0].maxtempF, search.weather[1].maxtempF, search.weather[2].maxtempF]
     let minTemp = [search.weather[0].mintempF, search.weather[1].mintempF, search.weather[2].mintempF]

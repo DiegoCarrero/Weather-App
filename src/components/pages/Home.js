@@ -54,7 +54,7 @@ export default function Home() {
                 : null
             }
 
-            <Previous prevSearches={prevSearches} />
+            <Previous prevSearches={prevSearches} city={city} />
         </div>
     )
 }
