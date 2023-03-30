@@ -15,7 +15,7 @@ export default function Home() {
     const [prevSearches, setPrevSearches] = useState([]);
     const [prevCity, setPrevCity] = useState('');
     // const [prevCities, setPrevCities] = useState([]);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     let { city } = useParams(); 
 
@@ -43,10 +43,9 @@ export default function Home() {
             setSearch(response)
             setPrevSearches([...prevSearches, response]);
         })
-        // input === '' ? city = 'Your current location' : city = input;
-        // city = city[0].toUpperCase() + city.slice(1).toLowerCase();
-        // setPrevCities([...prevCities, city]);
-        // navigate(`/${input}`);
+        input === '' ? city = 'Your current location' : city = input;
+        city = city[0].toUpperCase() + city.slice(1).toLowerCase();
+        navigate(`/${city}`);
         setInput('');
     }
 
