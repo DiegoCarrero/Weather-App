@@ -1,5 +1,5 @@
 import { getWeather } from '../../api/fetch'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 // import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -13,8 +13,9 @@ export default function Home() {
     const [input, setInput] = useState('');
     const [search, setSearch] = useState({});
     const [prevSearches, setPrevSearches] = useState([]);
+    const [prevCity, setPrevCity] = useState('');
     // const [prevCities, setPrevCities] = useState([]);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     let { city } = useParams(); 
 
@@ -25,6 +26,16 @@ export default function Home() {
     //     }
     // }, [])
 
+    useEffect(() => {
+        if (prevCity !== '') {
+            getWeather(prevCity)
+            .then(response => {
+                setSearch(response)
+            })
+            setPrevCity('')
+        }
+    }, [prevCity])
+
     function handleSubmit(event) {
         event.preventDefault();
         getWeather(input)
@@ -32,10 +43,10 @@ export default function Home() {
             setSearch(response)
             setPrevSearches([...prevSearches, response]);
         })
-        input === '' ? city = 'Your current location' : city = input;
-        city = city[0].toUpperCase() + city.slice(1).toLowerCase();
+        // input === '' ? city = 'Your current location' : city = input;
+        // city = city[0].toUpperCase() + city.slice(1).toLowerCase();
         // setPrevCities([...prevCities, city]);
-        navigate(`/${city}`);
+        // navigate(`/${input}`);
         setInput('');
     }
 
@@ -49,7 +60,7 @@ export default function Home() {
                 <main>
                     <Main search={search} city={city} />
                     <Summaries search={search} />
-                    <Previous prevSearches={prevSearches} /*prevCities={prevCities}*/ />
+                    <Previous prevSearches={prevSearches} /*prevCities={prevCities}*/ setPrevCity={setPrevCity} />
                 </main>
                 :
                 <main><p>Choose a location to view the weather</p></main>

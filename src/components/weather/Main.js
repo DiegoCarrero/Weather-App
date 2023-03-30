@@ -1,6 +1,6 @@
 
 
-export default function Main( { search, city } ) {
+export default function Main( { search } ) {
 
     let area = search.nearest_area[0].areaName[0].value;
     let region = search.nearest_area[0].region[0].value;
@@ -11,7 +11,7 @@ export default function Main( { search, city } ) {
         <main>
             
             <article>
-                <h2>{city}</h2>
+                <h2>{area}</h2>
                 <p><strong>Area:</strong> {area}</p> 
                 <p><strong>Region:</strong> {region}</p>
                 <p><strong>Country:</strong> {country}</p>
