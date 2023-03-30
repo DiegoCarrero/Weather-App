@@ -9,8 +9,9 @@ export default function Previous({ prevSearches /*, prevCities*/ }) {
 
     return (
         <aside>
+            <h4>Previous Searches</h4>
             {
-                prevSearches && (
+                prevSearches.length > 0 ? 
                     <ul>
                         {
                             prevSearches.map(prevSearch => (
@@ -20,7 +21,7 @@ export default function Previous({ prevSearches /*, prevCities*/ }) {
                             ))
                         }
                     </ul>
-                ) 
+                : <p>No previous searches</p>
             }
         </aside>
     )
