@@ -8,7 +8,7 @@ export default function Previous({ prevSearches /*, prevCities*/, setPrevCity })
     
 
     return (
-        <aside>
+        <aside className="previous">
             <h4>Previous Searches</h4>
             {
                 prevSearches.length > 0 ? 

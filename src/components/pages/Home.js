@@ -56,12 +56,12 @@ export default function Home() {
             {
                 Object.keys(search).length !== 0 
                 ? 
-                <main>
+                <main className='main'>
                     <Main search={search} city={city} />
                     <Summaries search={search} />
                 </main>
                 :
-                <main><p>Choose a location to view the weather</p></main>
+                <main className='main'><p>Choose a location to view the weather</p></main>
             }
             <Previous prevSearches={prevSearches} /*prevCities={prevCities}*/ setPrevCity={setPrevCity} />
 
