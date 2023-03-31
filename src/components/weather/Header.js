@@ -3,7 +3,7 @@
 export default function Header({ input, setInput, handleSubmit }) {
 
     return (
-        <section className="header">
+        <header className="header">
             <h1>Weather App</h1>
 
             <form onSubmit={handleSubmit}>
@@ -16,6 +16,6 @@ export default function Header({ input, setInput, handleSubmit }) {
                 <button type="submit">Search</button>
             </form>
             
-        </section>
+        </header>
     )
 }
