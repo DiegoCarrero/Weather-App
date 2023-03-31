@@ -50,7 +50,7 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div className='container'>
 
             <Header input={input} setInput={setInput} handleSubmit={handleSubmit} />
             {

@@ -4,21 +4,28 @@ body {
   justify-content: baseline;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  grid-template-areas: 
-  "header header previous"
-  ". main previous"
-  ". . previous";
+  display: flex;
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 /* ----Header---- */
 
 .header {
   background-color: rgb(1, 142, 142);
-  grid-area: header;
   color: white;
   border-style: solid;
   border-radius: 5px;
@@ -32,9 +39,7 @@ body {
 .main {
   background-color: navy;
   color: white;
-  grid-area: main;
   min-height: 400px;
-  max-height: fit-content;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -43,7 +48,6 @@ body {
 
 .previous {
   background-color: darkgreen;
-  grid-area: previous;
   color: white;
   padding-top: 10px;
   padding-bottom: 15px;
