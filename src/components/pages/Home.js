@@ -59,11 +59,11 @@ export default function Home() {
                 <main>
                     <Main search={search} city={city} />
                     <Summaries search={search} />
-                    <Previous prevSearches={prevSearches} /*prevCities={prevCities}*/ setPrevCity={setPrevCity} />
                 </main>
                 :
                 <main><p>Choose a location to view the weather</p></main>
             }
+            <Previous prevSearches={prevSearches} /*prevCities={prevCities}*/ setPrevCity={setPrevCity} />
 
         </div>
     )
