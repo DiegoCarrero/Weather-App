@@ -6,9 +6,9 @@ This weather app allows the user to search details about the weather in any city
 
 ## Wireframe
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fq6fahhwiTCXFuG4BbsFTFT%2FWeather-App%3Fnode-id%3D4%253A3%26t%3DageSkdaYEM2e1zmo-1" allowfullscreen></iframe>
+[![Image of Wireframe](https://user-images.githubusercontent.com/115671640/229289933-2207678b-a1ba-4f4a-b538-b2c46144d39e.png)](https://www.figma.com/file/q6fahhwiTCXFuG4BbsFTFT/Weather-App?node-id=0%3A1&t=CR52uYE1iNGceaAp-1)
 
-[Trello board] (https://trello.com/invite/b/Ltz2b759/ATTIeb58c8c159edee6547d9c57874a64257DA97F9A7/weather-app)
+[Trello board](https://trello.com/invite/b/Ltz2b759/ATTIeb58c8c159edee6547d9c57874a64257DA97F9A7/weather-app)
 
 ## Technologies and API
 
