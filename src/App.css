@@ -37,12 +37,16 @@ body {
 /* ----Main---- */
 
 .main {
-  background-color: navy;
+  background-color: goldenrod;
   color: white;
   min-height: 400px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+/* .main-section {
+  background-color: ;
+} */
 
 /* ----Previous---- */
 
@@ -61,6 +65,7 @@ ul {
 
 .summaries {
   display: flex;
+  background-color: navy;
 }
 
 .summary {

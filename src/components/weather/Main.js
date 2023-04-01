@@ -8,7 +8,7 @@ export default function Main( { search } ) {
     let feelsLike = search.current_condition[0].FeelsLikeF;   
             
     return (
-        <section>
+        <section className="main-section">
 
             <h2>{area}</h2>
             <p><strong>Area:</strong> {area}</p> 
