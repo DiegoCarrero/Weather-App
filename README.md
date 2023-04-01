@@ -19,13 +19,17 @@ wttr.in API
 
 ## Implementation Timeline
 
-Day 1 - Setup
-    Wireframing, creating kanban board and timeline.
+Day 1 - Setup 
+    Wireframing, creating kanban board and timeline  
+    
 Day 2 - Search Weather Details
-    Setup API, build fetch function, build empty components, add Header functionality
+    Setup API, build fetch function, build empty components, add Header functionality 
+    
 Day 3 - Display Weather Details
-    Adding content and functionality to Weather, Summaries, Previous and About components
-Day 4 - Enhance User Experience
-    Location matching, icon based on data, temp conversion widget
+    Adding content and functionality to Home and Main components 
+    
+Day 4 - Display More Weather Details and Previous Searches
+    Adding content to Summaries and Previous components
+    
 Day 5 - Improve User Interface
-    Visuals and animations
+    Adding CSS visuals
